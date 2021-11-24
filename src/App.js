@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import TicTacToe from "./TicTacToe";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+    const [player, setPlayer] = useState(true);
+    const falso = () => {
+        return setPlayer(false)
+    }
+    return (
+        <>
+            {
+                player === true ?
+                    <form className="player">
+                        <h1>
+                            Escoje tu Jugador
+                        </h1>
+                        <tbody>
+                            <tr>
+                                <input type="text" placeholder="Nombre"></input>
+                            </tr>
+                            <tr>
+                                <input type="text" placeholder="Nombre"></input>
+                            </tr>
+                            <tr>
+                                <input type="button" placeholder="Nombre" value="O" onClick={() => falso()}></input>
+                            </tr>
+                            <tr>
+                                <input type="button" placeholder="Nombre" value="X" onClick={() => falso()}></input>
+                            </tr>
+
+                        </tbody>
+
+                    </form>
+                    :
+                    <TicTacToe />
+            }
+
+
+        </>
+    )
 }
-
 export default App;

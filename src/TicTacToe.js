@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./TictacToe.css"
+import Players from './Players';
 
 const TicTacToe = () => {
     const [turn, setTurn] = useState("X");
     const [cells, setCells] = useState(Array(9).fill(''));
     const [ganador, setGanador]= useState();
+    const [player, setPlayer] = useState("X");
 
     const BuscarGanador = (squares) => {
         let combos= {
@@ -72,6 +74,7 @@ const TicTacToe = () => {
     return (
 
         <div className="container" >
+            
             Turn: {turn}
             <table>
                 <tbody>

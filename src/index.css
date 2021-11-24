@@ -3,3 +3,13 @@ table tr{
   width: 100px;
   height: 100px;
 }
+form{
+  background-color: grey;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+tbody{
+  display: inline-block;
+  justify-content: center;
+}
